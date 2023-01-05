@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: true,
+  images:{
+    domains: ['links.papareact.com']
+      } ,
   experimental: {
-    // Required:
     appDir: true,
   },
 };
