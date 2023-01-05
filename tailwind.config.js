@@ -5,10 +5,6 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
 
   ],
-  theme: {
-    extend: {
-      // https://vercel.com/design/color
-      
-    },
-  },
+  plugins: [
+    require('tailwind-scrollbar-hide')],
 };
