@@ -99,7 +99,7 @@ const Header = () => {
               Cancel
             </button>
             <button className="flex-grow text-[#FD5B61]" >
-              {/* <Link
+              <Link
                 href={{
                   pathname: '/search',
                   query: {
@@ -109,9 +109,9 @@ const Header = () => {
                     noOfGuest,
                   },
                 }}
-              > */}
+              >
                 Search
-              {/* </Link> */}
+              </Link>
             </button>
           </div>
         </div>
