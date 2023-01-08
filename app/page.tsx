@@ -4,12 +4,14 @@ import { CardsType, Post } from 'components/Types';
 import Cards from 'components/Cards';
 import LargeCard from 'components/LargeCard';
 import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 const Page = async () => {
   const data = await DataFetching();
   const CardsData = await CardsApi();
   return (
     <div>
+      <Header/>
       {/* FIRST DIV */}
       <Banner />
       <main className="mx-auto max-w-7xl px-8 sm:px-16">
