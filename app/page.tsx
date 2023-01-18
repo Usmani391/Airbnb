@@ -1,17 +1,15 @@
 import SmallCards from 'components/SmallCards';
 import Banner from '../components/Banner';
-import { CardsType, Post } from 'components/Types';
+import { CardsType, Post ,data,CardsData } from 'components/Constants';
 import Cards from 'components/Cards';
 import LargeCard from 'components/LargeCard';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 
-const Page = async () => {
-  const data = await DataFetching();
-  const CardsData = await CardsApi();
+const Page = () => {
   return (
     <div>
-      <Header/>
+      <Header placeholder='' />
       {/* FIRST DIV */}
       <Banner />
       <main className="mx-auto max-w-7xl px-8 sm:px-16">
@@ -56,21 +54,21 @@ export default Page;
 // ======> DATA FETCHING FROM API'S
 // ======> DATA FETCHING FROM API'S
 
-export async function DataFetching() {
-  const DataApi = await fetch('https://www.jsonkeeper.com/b/4G1G').then((res) =>
-    res.json(),
-  );
+// export async function DataFetching() {
+//   const DataApi = await fetch('https://www.jsonkeeper.com/b/4G1G').then((res) =>
+//     res.json(),
+//   );
 
-  return DataApi;
-}
-export async function CardsApi() {
-  const cards = await fetch('https://jsonkeeper.com/b/VHHT')
-    .then((res) => res.json())
-    .catch((err) => [
-      { img: 'https://links.papareact.com/2io', title: 'Outdoor getaways' },
-      { img: 'https://links.papareact.com/q7j', title: 'Unique stays' },
-      { img: 'https://links.papareact.com/s03', title: 'Entire homes' },
-      { img: 'https://links.papareact.com/8ix', title: 'Pet allowed' },
-    ]);
-  return cards;
-}
+//   return DataApi;
+// }
+// export async function CardsApi() {
+//   const cards = await fetch('https://jsonkeeper.com/b/VHHT')
+//     .then((res) => res.json())
+//     .catch((err) => [
+//       { img: 'https://links.papareact.com/2io', title: 'Outdoor getaways' },
+//       { img: 'https://links.papareact.com/q7j', title: 'Unique stays' },
+//       { img: 'https://links.papareact.com/s03', title: 'Entire homes' },
+//       { img: 'https://links.papareact.com/8ix', title: 'Pet allowed' },
+//     ]);
+//   return cards;
+// }

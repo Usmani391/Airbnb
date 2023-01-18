@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CardsType } from "./Types"
+import { CardsType } from "./Constants"
 
 const Cards = ({img,title}:CardsType) => {
   return (

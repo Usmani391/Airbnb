@@ -12,27 +12,13 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { useState } from 'react';
 import { DateRangePicker } from 'react-date-range';
 import Link from 'next/link';
-// import { useRouter } from 'next/';
-import { Search } from './Types';
-// import { useRouter } from 'next/';
 
-const Header = () => {
+const Header = ({ placeholder }: { placeholder: string }) => {
   const [searchInput, setSearchInput] = useState('');
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [noOfGuest, setNoOfGuest] = useState(1);
-  // const router = useRouter();
-  // const search = () => {
-    // router.push({
-      // pathname: '/search',
-      // query: {
-        // location: searchInput,
-        // startDate: startDate.toISOString(),
-        // endDate: endDate.toISOString(),
-        // noOfGuest: noOfGuest,
-      // },
-    // });
-  // };
+
   const resetInput = () => {
     setSearchInput('');
   };
@@ -60,16 +46,27 @@ const Header = () => {
           onChange={(e) => setSearchInput(e.target.value)}
           type="text"
           className="mx-2 flex-grow rounded bg-transparent text-sm text-gray-600 placeholder-gray-400 outline-none "
-          placeholder="Start your Search"
+          placeholder={placeholder || 'Start your Search'}
         />
-        <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-red-400  object-contain p-2 text-white md:inline-flex" />
+        <Link
+          href={{
+            pathname: '/search',
+            query: {
+              location: searchInput,
+              startDate: startDate.toISOString(),
+              endDate: endDate.toISOString(),
+              noOfGuest,
+            },
+          }}
+        >
+          <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-red-400  object-contain p-2 text-white md:inline-flex" />
+        </Link>
       </div>
       <div className="flex items-center justify-end space-x-4">
         <p className="hidden font-medium md:inline ">Become a host</p>
         <GlobeAltIcon className="h-8 cursor-pointer" />
         <div className="flex  flex-grow-0 items-center space-x-2 rounded-full border-2 p-2 shadow-lg">
           <MenuIcon className="h-6 cursor-pointer" />
-
           <UserCircleIcon className="h-6" />
         </div>
       </div>
@@ -98,7 +95,7 @@ const Header = () => {
             <button className="flex-grow text-gray-400" onClick={resetInput}>
               Cancel
             </button>
-            <button className="flex-grow text-[#FD5B61]" >
+            <button className="flex-grow text-[#FD5B61]">
               <Link
                 href={{
                   pathname: '/search',

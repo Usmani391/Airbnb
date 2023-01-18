@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {Post} from './Types'
+import {Post} from './Constants'
 
 const SmallCards = (props:Post) => {
   return (
