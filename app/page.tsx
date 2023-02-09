@@ -5,10 +5,13 @@ import Cards from 'components/Cards';
 import LargeCard from 'components/LargeCard';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
+import router from 'next/router';
+import { useEffect } from 'react';
+import ProgressBar from '@badrap/bar-of-progress';
 
 const Page = () => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Header placeholder='' />
       {/* FIRST DIV */}
       <Banner />

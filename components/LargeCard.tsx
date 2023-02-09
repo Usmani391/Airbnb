@@ -3,7 +3,7 @@ import Image from 'next/image';
 const LargeCard = ({ img, title, description, buttonText }: any) => {
   return (
     <section className="relative cursor-pointer py-16">
-      <div className="relative  h-96 min-w-[300px]">
+      <div className="relative  h-96 min-w-[280pxpx]">
         <Image
           src={img}
           fill

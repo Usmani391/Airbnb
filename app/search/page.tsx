@@ -1,10 +1,8 @@
 'use client';
-// import { Fetcher } from 'swr';
 import { parseISO, format } from 'date-fns';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import { useSearchParams } from 'next/navigation';
-// import { use } from 'react';
 import { PageData } from 'components/Constants';
 import InfoCards from 'components/InfoCards';
 
